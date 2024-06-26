@@ -341,6 +341,8 @@ class GoogleTranslate
             return $string;
         }
 
+        $string = preg_replace('/#\{\s*(\d+)\s*\}/', '#{$1}', $string);
+
         // Replace all matches of our pattern with #{\d} for replacement later
         return preg_replace_callback(
             $this->pattern,
