@@ -364,7 +364,7 @@ class GoogleTranslate
      */
     protected function injectParameters(string $string, array $replacements): string
     {
-        $string = preg_replace('/#\{\s*(\d+)\s*\}/', '#{$1}', $string);
+        $string = preg_replace('/#\s*\{\s*(\d+)\s*\}/', '#{$1}', $string);
         
         return preg_replace_callback(
             '/\#{(\d+)}/',
